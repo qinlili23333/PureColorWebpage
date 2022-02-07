@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <title>纯色网页/屏幕台灯</title>
+</head>
+
+<body>
+    <script>
+        let color = prompt("请输入你需要的颜色(十六进制色号,如FF0000,带不带井号均可),不输入则默认白色")
+        if(!color){
+            color="#FFFFFF"
+        }
+        if (!color.startsWith("#")) {
+            color = "#" + color
+        }
+        document.body.setAttribute("bgcolor", color)
+    </script>
+</body>
+
+</html>
