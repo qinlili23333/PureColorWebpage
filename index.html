@@ -27,6 +27,17 @@
                 black = black ? false : true
             }
         }, true);
+        let screenLock;
+        navigator.wakeLock.request('screen').then(lock => {
+            screenLock = lock
+            console.log("阻止屏幕进入休眠成功");
+            console.log(screenLock);
+        });
+        window.addEventListener('unload', () => {
+            screenLock.release();
+            console.log("释放唤醒锁");
+            console.log(screenLock);
+        });
     </script>
 </body>
 
